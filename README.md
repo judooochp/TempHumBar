@@ -7,4 +7,8 @@ It displays temperature in °F and °C, Relative Humidity (%RH), and Barometric 
 
 The hardware involved include two Adafruit BMP180 breakouts, two HTU21D-F breakouts, a Seeed Studio TFT Touch Shield (v2.0), a GD4051B multiplexer, and the Arduino Uno.
 
-Future edits will include ranging adjustments to compensate for overflow when the temperature reaches 100 °F or -0.1 °C
+Libraries include Seeed Studio TFTv2, SPI, Wire, Adafruit's Unified Sensor library, and Adafruit BMP085 library (may be included in the unified set.)
+
+Future edits will include:
+  - ranging adjustments to compensate for overflow when the temperature reaches 100 °F or -0.1 °C
+  - Changing colors along the same lines, probably at different temps.
