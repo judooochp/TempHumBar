@@ -98,7 +98,7 @@ void loop(void) {
     Tft.drawFloat(relHum,1,5,180,4,BLACK); // Remove previous value, which allows for greater refresh rates than  would using "drawRectangle()".
     relHum = htu.readHumidity();
     
-/* This term is used as compensation similar to the temperature, explained on line 123 */
+/* This term is used as compensation similar to the temperature, explained on line 112 */
     relHum -= 0.3;
     Tft.drawFloat(relHum,1,5,180,4,WHITE); // Draw it.
     
