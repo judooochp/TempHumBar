@@ -95,7 +95,7 @@ void loop(void) {
     bmp.getTemperature(&bmpTemp);
     
     
-    Tft.drawFloat(relHum,1,5,180,4,BLACK); // Remove previous value, which allows for greater refresh rates than  would using "drawRectangle()".
+    Tft.drawFloat(relHum,1,5,180,4,BLACK); // Remove previous value, faster refresh, etc.
     relHum = htu.readHumidity();
     
 /* This term is used as compensation similar to the temperature, explained on line 112 */
@@ -103,10 +103,10 @@ void loop(void) {
     Tft.drawFloat(relHum,1,5,180,4,WHITE); // Draw it.
     
     
-    Tft.drawFloat(avgTemp,1,5,25,4,BLACK); // Remove previous °F value, which allows for greater refresh rates than  would using "drawRectangle()".
+    Tft.drawFloat(avgTemp,1,5,25,4,BLACK); // Remove previous °F value, faster refresh, yadda yadda...
     avgTemp -= 32; // Convert to °C
     avgTemp /= 1.8; // Continue conversion.
-    Tft.drawFloat(avgTemp,1,10,100,3,BLACK); // Remove previous value, which allows for greater refresh rates than  would using "drawRectangle()".
+    Tft.drawFloat(avgTemp,1,10,100,3,BLACK); // Remove previous value quickly.
     htuTemp = htu.readTemperature(); // Get new temperature in °C
     
     /* The term (+0.5556) is used to comensate for differences of sensor arrays 
