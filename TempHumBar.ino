@@ -49,7 +49,6 @@ Adafruit_BMP085_Unified bmp = Adafruit_BMP085_Unified(10085);
   float relHum2;
   
 void setup(void) {
-//  Serial.begin(9600);
   pinMode(9,OUTPUT);
   Tft.TFTinit();
   TFT_BL_ON;
@@ -83,7 +82,7 @@ void loop(void) {
   sensors_event_t event;
   bmp.getEvent(&event);
 
-/* Display the results (barometric pressure is measure in hPa, but I've converted it to Inches of Mercury.) */
+/* Display the results (barometric pressure is measured in hPa, but I've converted it to Inches of Mercury.) */
   if (event.pressure) {
     
    Tft.drawFloat(presHg,1,5,270,4,BLACK); // Remove previous value, which allows for greater refresh rates than  would using "drawRectangle()".
